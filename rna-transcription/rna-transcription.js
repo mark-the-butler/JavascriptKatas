@@ -9,17 +9,13 @@ var DnaTranscriber = function() {
     this.rnaStrand = "";
 };
 
-DnaTranscriber.prototype.getDnaStrand = function(strand) {
-    this.dnaDictionary.forEach(function(element){
-        if (element.key === strand) {
-            this.rnaStrand += element.value;
-        }
-    });
-}
-
 DnaTranscriber.prototype.toRna = function(dnaStrand) {
-    dnaStrand.split(" ").forEach(function(strand) {
-        getDnaStrand(this);
+    dnaStrand.split(" ").map(function(x) {
+        this.dnaDictionary.forEach(function(element){
+            if (element.key === x) {
+                this.rnaStrand += element.value;
+            }
+        });
     });
 
     return this.rnaStrand;
