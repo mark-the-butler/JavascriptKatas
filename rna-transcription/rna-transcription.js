@@ -9,14 +9,17 @@ var DnaTranscriber = function() {
     this.rnaStrand = "";
 };
 
+function getOpposite(letter) {
+    for(var i = 0; i < this.dnaDictionary.length; i++) {
+        if(this.dnaDictionary[i].key == letter) {
+            return this.dnaDictionary[i].value;
+        }
+    }
+}
+
 DnaTranscriber.prototype.toRna = function(dnaStrand) {
     dnaStrand.split(" ").map(function(x) {
-        console.log(dnaStrand);
-        this.dnaDictionary.forEach(function(element){
-            if (element.key === x) {
-                this.rnaStrand += element.value;
-            }
-        });
+        this.rnaStrand += getOpposite(x);
     });
 
     return this.rnaStrand;
