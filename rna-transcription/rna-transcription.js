@@ -29,6 +29,3 @@ DnaTranscriber.prototype.toRna = function(dnaStrand) {
 
 
 module.exports = DnaTranscriber;
-
-
-// Look at creating a function that gets the opposite of the letter that is passed in.
