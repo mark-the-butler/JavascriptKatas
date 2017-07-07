@@ -11,6 +11,7 @@ var DnaTranscriber = function() {
 
 DnaTranscriber.prototype.toRna = function(dnaStrand) {
     dnaStrand.split(" ").map(function(x) {
+        console.log(dnaStrand);
         this.dnaDictionary.forEach(function(element){
             if (element.key === x) {
                 this.rnaStrand += element.value;
@@ -24,3 +25,6 @@ DnaTranscriber.prototype.toRna = function(dnaStrand) {
 
 
 module.exports = DnaTranscriber;
+
+
+// Look at creating a function that gets the opposite of the letter that is passed in.
