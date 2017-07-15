@@ -8,7 +8,7 @@ var dnaDictionary = [
             {key:"A",value:"U"}
         ];
 
-var rnaStrand = "";
+var rnaStrand;
 
 function getOpposite(letter) {
     for(var i = 0; i < dnaDictionary.length; i++) {
@@ -22,8 +22,8 @@ DnaTranscriber.prototype.toRna = function(dnaStrand) {
     var strandToArray = dnaStrand.split("");
     
     strandToArray.map(function(x) {
-        var oppositeLetter = getOpposite(x);
-        rnaStrand += oppositeLetter;
+        rnaStrand = getOpposite(x);
+        return rnaStrand.toString();
     });
 
     return rnaStrand;
