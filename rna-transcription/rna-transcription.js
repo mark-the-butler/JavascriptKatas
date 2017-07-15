@@ -22,11 +22,16 @@ DnaTranscriber.prototype.toRna = function(dnaStrand) {
     var strandToArray = dnaStrand.split("");
     
     rnaStrand = strandToArray.map(function(x) {
-         var oppositeLetters = getOpposite(x);
-        return oppositeLetters;
-    });
+                   var oppositeLetters = getOpposite(x);
+                   return oppositeLetters;
+                });
+
+    if (rnaStrand.join("").length !== dnaStrand.length) {
+        throw new Error("Invalid input");
+    }
 
     return rnaStrand.join("");
+    
 };
 
 
