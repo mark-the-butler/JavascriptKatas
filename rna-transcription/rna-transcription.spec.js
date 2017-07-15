@@ -24,7 +24,7 @@ describe('toRna()', function() {
         .toEqual('UGCACCAGAAUU');
   });
 
-  xit('correctly handles completely invalid input', function () {
+  it('correctly handles completely invalid input', function () {
      expect(function () { dnaTranscriber.toRna('XXX') }).toThrow(
           new Error('Invalid input')
       );

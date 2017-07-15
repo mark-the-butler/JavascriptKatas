@@ -21,12 +21,12 @@ function getOpposite(letter) {
 DnaTranscriber.prototype.toRna = function(dnaStrand) {
     var strandToArray = dnaStrand.split("");
     
-    strandToArray.map(function(x) {
-        rnaStrand = getOpposite(x);
-        return rnaStrand.toString();
+    rnaStrand = strandToArray.map(function(x) {
+         var oppositeLetters = getOpposite(x);
+        return oppositeLetters;
     });
 
-    return rnaStrand;
+    return rnaStrand.join("");
 };
 
 
