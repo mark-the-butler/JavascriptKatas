@@ -2,14 +2,25 @@ var Pangram = require('./pangram');
 
 describe('Pangram()', function()  {
 
-  it('empty sentence', function() {
+  xit('empty sentence', function() {
     var pangram = new Pangram('');
     expect(pangram.isPangram()).toBe(false);
+  });
+
+  it('Pangram should have a property mapped to passed in sentence', function() {
+    var sentence = "the quick brown fox jumps over the lazy dog";
+    var pangram = new Pangram(sentence);
+    expect(pangram.sentenceToTest).toEqual(sentence);
   });
 
   xit('pangram with only lower case', function()  {
     var pangram = new Pangram("the quick brown fox jumps over the lazy dog");
     expect(pangram.isPangram()).toBe(true);
+  });
+
+  it('returns sentence as array with no spaces', function() {
+    var pangram = new Pangram("This sentence");
+    expect(pangram.isPangram()).toEqual(["T","h","i","s","s","e","n","t","e","n","c","e"]);
   });
 
   xit("missing character 'x'", function()  {
