@@ -13,14 +13,14 @@ describe('Pangram()', function()  {
     expect(pangram.sentenceToTest).toEqual(sentence);
   });
 
-  xit('pangram with only lower case', function()  {
-    var pangram = new Pangram("the quick brown fox jumps over the lazy dog");
-    expect(pangram.isPangram()).toBe(true);
-  });
-
   it('returns sentence as array with no spaces', function() {
     var pangram = new Pangram("This sentence");
     expect(pangram.isPangram()).toEqual(["T","h","i","s","s","e","n","t","e","n","c","e"]);
+  });
+
+  xit('pangram with only lower case', function()  {
+    var pangram = new Pangram("the quick brown fox jumps over the lazy dog");
+    expect(pangram.isPangram()).toBe(true);
   });
 
   xit("missing character 'x'", function()  {
